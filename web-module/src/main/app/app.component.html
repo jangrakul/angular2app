@@ -1,0 +1,54 @@
+<html>
+<head>
+
+</head>
+<body>
+<header id="header">
+    Menu Type 1
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <div class="icon-bar">
+        <a [routerLink]="['/home']" routerLinkActive="active"><i class="fa fa-home"></i></a>
+        <a routerLink="/employees" routerLinkActive="active"><i class="fa fa-search"></i></a>
+        <a routerLink="/fileupload" routerLinkActive="active"><i class="fa fa-folder-open"></i></a>
+        <!--<a href="#" routerLinkActive="active"><i class="fa fa-trash"></i></a>-->
+        <!--<a href="#" routerLinkActive="active"><i class="fa fa-envelope"></i></a>-->
+    </div>
+
+    Menu Type 2
+    <nav>
+        <!--a routerLink="/" routerLinkActive="active">Dashboard</a-->
+        <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
+        <a routerLink="/employees" routerLinkActive="active">Employees</a>
+        <!--<a routerLink=["/management">Management</a>-->
+        <a routerLink="/fileupload" routerLinkActive="active">File Upload</a>
+        <!--a routerLink="/**" routerLinkActive="active">Dashboard</a-->
+    </nav>
+
+<p></p>
+    Menu Type 3
+    <ul class="topnav" id="myTopNav">
+        <li><a [routerLink]="['/home']" routerLinkActive="active">Home</a></li>
+        <li><a routerLink="/employees" routerLinkActive="active">Employees</a></li>
+        <li><a routerLink="/fileupload" routerLinkActive="active">File Upload</a></li>
+        <!--<li><a href="#about">About</a></li>-->
+        <li class="icon">
+            <a href="javascript:void(0);" onclick="changeTopNav()">&#9776;</a>
+        </li>
+    </ul>
+
+
+
+</header>
+
+<main>
+    <router-outlet></router-outlet>
+</main>
+
+<footer class="text-center">
+    <p>
+        <i>Angular2-Website</i> Copyright &copy; 2016
+    </p>
+</footer>
+</body>
+</html>

@@ -14,19 +14,19 @@
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <!-- 2. Configure SystemJS -->
     <script src="systemjs.config.js"></script>
-    <script src="shared/custom-functions.js"></script>
     <script>
       System.import('app').catch(function(err){ console.error(err); });
     </script>
 
     <script>function changeTopNav() {
-      var x = document.getElementById("myTopNav");
-      if (x.className === "topnav") {
+      var x = document.getElementById("myNav");
+      if (x.className === "nav") {
         x.className += " responsive";
       } else {
-        x.className = "topnav";
+        x.className = "nav";
       }
-    }</script>
+    }
+    </script>
   </head>
   <!-- 3. Display the application -->
   <body>

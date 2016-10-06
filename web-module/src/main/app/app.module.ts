@@ -12,12 +12,9 @@ import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
 import { InMemoryDataService }  from './shared/service/in-memory-data.service';
 
 import { AppComponent }  from './app.component';
-import { EmployeeDetailComponent} from './employee/employee-detail.component';
-import { EmployeesComponent} from './employee/employees.component';
-import { EmployeeService } from './employee/employee.service';
-import { HomeComponent } from "./home/home.component";
-import { ManagementComponent } from "./management/management.component";
-import { FileUploadComponent } from "./fileupload/fileupload.component";
+import { HomeModule } from "./home/home.module";
+import { TaskModule } from "./task/task.module";
+import { CustomFileUploadModule } from "./fileupload/fileupload.module";
 
 import { routing } from './app.routing';
 
@@ -27,21 +24,19 @@ import { routing } from './app.routing';
         FormsModule,
         HttpModule,
         InMemoryWebApiModule.forRoot(InMemoryDataService),
+        HomeModule,
+        TaskModule,
+        CustomFileUploadModule,
         routing
     ],
     declarations: [
-        AppComponent,
-        HomeComponent,
-        EmployeeDetailComponent,
-        EmployeesComponent,
-        ManagementComponent,
-        FileUploadComponent
-    ],
-    providers: [
-        EmployeeService
+        AppComponent
     ],
     bootstrap: [
         AppComponent
     ]
 })
-export class AppModule { }
+
+export class AppModule {
+
+}

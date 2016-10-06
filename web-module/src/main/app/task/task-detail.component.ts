@@ -6,21 +6,21 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute, Params } from '@angular/router';
 
-import { Employee } from '../shared/states/employee';
-import { EmployeeService } from "./employee.service";
+import { Task } from '../shared/states/task';
+import { TaskService } from "./task.service";
 
 @Component({
     moduleId: module.id,
-    selector: 'my-employee-detail',
-    templateUrl: 'employee-detail.component.html',
-    styleUrls: [ 'employee-detail.component.css' ]
+    selector: 'my-task-detail',
+    templateUrl: 'task-detail.component.html',
+    //styleUrls: [ 'task-detail.component.css' ]
 })
-export class EmployeeDetailComponent implements OnInit {
-    title: string = "Employee Details";
-    employee: Employee;
+export class TaskDetailComponent implements OnInit {
+    title: string = "Task Details";
+    task: Task;
 
     constructor(
-        private employeeService: EmployeeService,
+        private taskService: TaskService,
         private route: ActivatedRoute,
         private location: Location
     ) {}
@@ -28,13 +28,13 @@ export class EmployeeDetailComponent implements OnInit {
     ngOnInit(): void {
         this.route.params.forEach((params: Params) => {
             let id = +params['id'];
-            this.employeeService.getEmployee(id)
-                .then(employee => this.employee = employee);
+            this.taskService.getTask(id)
+                .then(task => this.task = task);
         });
     }
 
     save(): void {
-        this.employeeService.update(this.employee)
+        this.taskService.update(this.task)
             .then(() => this.goBack());
     }
 

@@ -19,12 +19,9 @@ var http_1 = require('@angular/http');
 var angular2_in_memory_web_api_1 = require('angular2-in-memory-web-api');
 var in_memory_data_service_1 = require('./shared/service/in-memory-data.service');
 var app_component_1 = require('./app.component');
-var employee_detail_component_1 = require('./employee/employee-detail.component');
-var employees_component_1 = require('./employee/employees.component');
-var employee_service_1 = require('./employee/employee.service');
-var home_component_1 = require("./home/home.component");
-var management_component_1 = require("./management/management.component");
-var fileupload_component_1 = require("./fileupload/fileupload.component");
+var home_module_1 = require("./home/home.module");
+var task_module_1 = require("./task/task.module");
+var fileupload_module_1 = require("./fileupload/fileupload.module");
 var app_routing_1 = require('./app.routing');
 var AppModule = (function () {
     function AppModule() {
@@ -36,18 +33,13 @@ var AppModule = (function () {
                 forms_1.FormsModule,
                 http_1.HttpModule,
                 angular2_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService),
+                home_module_1.HomeModule,
+                task_module_1.TaskModule,
+                fileupload_module_1.CustomFileUploadModule,
                 app_routing_1.routing
             ],
             declarations: [
-                app_component_1.AppComponent,
-                home_component_1.HomeComponent,
-                employee_detail_component_1.EmployeeDetailComponent,
-                employees_component_1.EmployeesComponent,
-                management_component_1.ManagementComponent,
-                fileupload_component_1.FileUploadComponent
-            ],
-            providers: [
-                employee_service_1.EmployeeService
+                app_component_1.AppComponent
             ],
             bootstrap: [
                 app_component_1.AppComponent

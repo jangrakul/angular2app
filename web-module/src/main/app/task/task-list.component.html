@@ -1,0 +1,38 @@
+<h1>{{title}}</h1>
+<div>
+    <label>Task headline</label><input type="text" #headline />
+    <button class="add" (click)="add(headline.value); headline.value=''">
+        Add
+    </button>
+</div>
+<p>
+</p>
+<div class="table">
+    <div class="row header black">
+        <div class="cell">Task ID</div>
+        <div class="cell">Headline</div>
+        <div class="cell">Owner</div>
+        <div class="cell" align="center">Action</div>
+    </div>
+    <div class="row" *ngFor="let task of tasks"
+         [class.selected]="task === selectedTask"
+         (click)="onSelect(task)">
+        <div class="cell">{{task.id}}</div>
+        <div class="cell">{{task.headline}}</div>
+        <div class="cell">{{task.owner}}</div>
+        <div class="cell" align="center">
+            <button class="delete" (click)="delete(task); $event.stopPropagation()">Delete</button>
+            <button class="update" (click)="gotoDetail(task); $event.stopPropagation()">Update</button>
+        </div>
+    </div>
+</div>
+<h3>Task Details</h3>
+<div *ngIf="selectedTask">
+    <div><label>ID</label>{{selectedTask.id}}</div>
+    <div><label>Owner</label>{{selectedTask.owner}}</div>
+    <div><label>Headline</label>{{selectedTask.headline | uppercase}}</div>
+    <div><label>Summary</label>{{selectedTask.summary}}</div>
+    <div><label>Detail</label>
+        <area/>{{selectedTask.detail}}
+    </div>
+</div>

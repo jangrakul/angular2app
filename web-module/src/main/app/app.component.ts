@@ -4,36 +4,35 @@
 
 import { Component, OnInit } from '@angular/core';
 
-import { Employee } from './shared/states/employee';
+import { Task } from './shared/states/task';
 
-import { EmployeeService } from './employee/employee.service';
+import { TaskService } from './task/task.service';
 
 @Component({
     selector: 'my-webapp',
     templateUrl: '/app/app.component.html',
-    styleUrls: ['/app/app.component.css'
-    ],
-    providers: [EmployeeService]
+    // styleUrls: ['/app/app.component.css'],
+    providers: [TaskService]
 })
 
 export class AppComponent implements OnInit {
-    title = 'Mastek Team';
-    selectedEmployee: Employee;
-    employees: Employee[];
+    title = 'Worklist';
+    selectedTask: Task;
+    tasks: Task[];
 
-    constructor(private employeeService: EmployeeService) { }
+    constructor(private taskService: TaskService) { }
 
-    getEmployees(): void {
+    getTasks(): void {
         // Use the promise way of getting data
-        this.employeeService.getEmployees().then(employees => this.employees = employees);
-        // this.employeeService.getEmployeesSlowly().then(employees => this.employees = employees);
+        this.taskService.getTasks().then(tasks => this.tasks = tasks);
+        // this.taskService.getTasksSlowly().then(tasks => this.tasks = tasks);
     }
 
-    onSelect(employee: Employee): void {
-        this.selectedEmployee = employee;
+    onSelect(task: Task): void {
+        this.selectedTask = task;
     }
 
     ngOnInit(): void {
-        this.getEmployees();
+        this.getTasks();
     }
 }

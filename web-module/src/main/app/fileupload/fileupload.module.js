@@ -14,16 +14,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var fileupload_component_1 = require("./fileupload.component");
 var core_1 = require("@angular/core");
 var fileupload_routing_1 = require("./fileupload.routing");
+var ng2_file_upload_1 = require("ng2-file-upload");
+var common_1 = require("@angular/common");
 var CustomFileUploadModule = (function () {
     function CustomFileUploadModule() {
     }
     CustomFileUploadModule = __decorate([
         core_1.NgModule({
             imports: [
+                common_1.CommonModule,
                 fileupload_routing_1.fileuploadRouting
             ],
             declarations: [
-                fileupload_component_1.FileUploadComponent
+                ng2_file_upload_1.FileDropDirective,
+                ng2_file_upload_1.FileSelectDirective,
+                fileupload_component_1.CustomFileUploadComponent
+            ],
+            exports: [
+                ng2_file_upload_1.FileDropDirective,
+                ng2_file_upload_1.FileSelectDirective
             ]
         }), 
         __metadata('design:paramtypes', [])

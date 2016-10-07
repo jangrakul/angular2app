@@ -4,18 +4,19 @@
 </head>
 <body>
 <header id="header">
-    Menu Type 1
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
-    <div class="icon-bar">
-        <a [routerLink]="['/home']" routerLinkActive="active"><i class="fa fa-home"></i></a>
-        <a routerLink="/tasks" routerLinkActive="active"><i class="fa fa-search"></i></a>
-        <a routerLink="/fileupload" routerLinkActive="active"><i class="fa fa-folder-open"></i></a>
-        <!--<a href="#" routerLinkActive="active"><i class="fa fa-trash"></i></a>-->
-        <!--<a href="#" routerLinkActive="active"><i class="fa fa-envelope"></i></a>-->
-    </div>
+    <!--Menu Type 1-->
+    <!--<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">-->
+    <!--&lt;!&ndash;<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">&ndash;&gt;-->
+    <!--<div class="icon-bar">-->
+        <!--<a [routerLink]="['/home']" routerLinkActive="active"><i class="fa fa-home"></i></a>-->
+        <!--<a routerLink="/tasks" routerLinkActive="active"><i class="fa fa-search"></i></a>-->
+        <!--<a routerLink="/fileupload" routerLinkActive="active"><i class="fa fa-folder-open"></i></a>-->
+        <!--&lt;!&ndash;<a href="#" routerLinkActive="active"><i class="fa fa-trash"></i></a>&ndash;&gt;-->
+        <!--&lt;!&ndash;<a href="#" routerLinkActive="active"><i class="fa fa-envelope"></i></a>&ndash;&gt;-->
+    <!--</div>-->
 
-    Menu Type 2
+    <!--Menu Type 2-->
+    <div class="header">
     <nav id="myNav">
         <!--a routerLink="/" routerLinkActive="active">Dashboard</a-->
         <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
@@ -25,6 +26,7 @@
         <a href="javascript:void(0);" onclick="changeTopNav()" class="icon">&#9776;</a>
         <!--a routerLink="/**" routerLinkActive="active">Dashboard</a-->
     </nav>
+    </div>
 </header>
 
 <main>

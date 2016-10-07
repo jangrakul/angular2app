@@ -13,31 +13,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  */
 var core_1 = require('@angular/core');
 var ng2_file_upload_1 = require("ng2-file-upload");
-// import { NgStyle, NgClass } from "@angular/common";
 // api url
-var URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
-var FileUploadComponent = (function () {
-    function FileUploadComponent() {
+var URL = 'http://localhost:8000/api/upload';
+var CustomFileUploadComponent = (function () {
+    function CustomFileUploadComponent() {
         this.title = 'File Upload Service';
         this.uploader = new ng2_file_upload_1.FileUploader({ url: URL });
-        this.hasBaseDropZoneOver = false;
-        this.hasAnotherDropZoneOver = false;
     }
-    FileUploadComponent.prototype.fileOverBase = function (e) {
-        this.hasBaseDropZoneOver = e;
-    };
-    FileUploadComponent.prototype.fileOverAnother = function (e) {
-        this.hasAnotherDropZoneOver = e;
-    };
-    FileUploadComponent = __decorate([
+    CustomFileUploadComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'my-fileupload',
-            templateUrl: '/app/fileupload/fileupload.component.html',
-            styleUrls: ['/app/fileupload/fileupload.component.css'],
+            templateUrl: 'fileupload.component.html',
+            styleUrls: ['fileupload.component.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], FileUploadComponent);
-    return FileUploadComponent;
+    ], CustomFileUploadComponent);
+    return CustomFileUploadComponent;
 }());
-exports.FileUploadComponent = FileUploadComponent;
+exports.CustomFileUploadComponent = CustomFileUploadComponent;
 //# sourceMappingURL=fileupload.component.js.map

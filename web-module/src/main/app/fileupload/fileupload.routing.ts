@@ -3,12 +3,12 @@
  */
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FileUploadComponent } from "./fileupload.component";
+import { CustomFileUploadComponent } from "./fileupload.component";
 
 const fileUploadRoutes: Routes = [
     {
         path: 'fileupload',
-        component: FileUploadComponent
+        component: CustomFileUploadComponent
     }
 ];
 
